@@ -1,4 +1,4 @@
-package ops1;
+package ua.ak;
 
 import java.io.IOException;
 
@@ -11,8 +11,7 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 
 
-		DataFormatConverter dfc = new DataFormatConverter();
-		System.out.println(DateUtil.getJavaDate(41258));
+		
 		
 		//SimpleDateFormat  dat= new  Si
 		
