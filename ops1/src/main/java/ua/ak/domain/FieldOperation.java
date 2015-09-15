@@ -1,9 +1,19 @@
-package ua.ak;
+package ua.ak.domain;
 
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+@Entity
 public class FieldOperation {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long id;
+	@Column
 	private Date date;
 	private String fieldCode;
 	private double fiedArea;

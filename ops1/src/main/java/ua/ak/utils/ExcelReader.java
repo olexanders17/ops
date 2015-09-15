@@ -1,4 +1,4 @@
-package ua.ak;
+package ua.ak.utils;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -11,6 +11,8 @@ import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import ua.ak.domain.FieldOperation;
 
 public class ExcelReader {
 
