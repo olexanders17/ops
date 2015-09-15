@@ -9,9 +9,10 @@ import javax.persistence.Persistence;
 public class Main {
 
 	public static void main(String[] args) throws IOException {
- 
-EntityManagerFactory factory= Persistence.createEntityManagerFactory("Primary");
-EntityManager em= factory.createEntityManager();
-em.close();
-}
+
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("Primary");
+		EntityManager em = factory.createEntityManager();
+		em.close();
+		factory.close();
+	}
 }
