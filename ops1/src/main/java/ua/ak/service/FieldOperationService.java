@@ -18,6 +18,8 @@ public interface FieldOperationService {
 			String fertilizerType, double fertilizerUsageQty, String chemicalsType, double chemicalsUsageQty,
 			double year, double seedsAmount, double fertilizerAmount, double chemicalsAmount);
 
+	public void fromExceltoDatabse(); 
+	
 	List<FieldOperation> getAll();	
 	FieldOperation getById(Long id);
 	void delete(Long id);
