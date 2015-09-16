@@ -1,19 +1,30 @@
 package ua.ak.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+@Entity(name="INPUTS")
 public class Inputs {
 	
 	@Id
+	@Column(name="ID")
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
+	@Column(name="INPUTS_NAME")
 	private String inputsName;
+	
+	@Column(name="INPUTS_NAME_BUDGET")
+	private String inputsNameBudget;
+	
+	@Column(name="INPUTS_TYPE")
 	private String inputsType;
+	
+	
+	@Column(name="INPUTS_PRICE")
 	private double inputsPrice;
 	
 	public Inputs() {
@@ -50,6 +61,14 @@ public class Inputs {
 
 	public void setInputsPrice(double inputsPrice) {
 		this.inputsPrice = inputsPrice;
+	}
+
+	public String getInputsNameBudget() {
+		return inputsNameBudget;
+	}
+
+	public void setInputsNameBudget(String inputsNameBudget) {
+		this.inputsNameBudget = inputsNameBudget;
 	}
 	
 

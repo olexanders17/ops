@@ -7,8 +7,8 @@
 </head>
 <body>
 	Hello
-	<form action="">
-		<input type="file"> <input type="submit">
+	<form action="fileUpload">
+		<input type="file"><br> <input type="submit">
 	</form>
 
 </body>
