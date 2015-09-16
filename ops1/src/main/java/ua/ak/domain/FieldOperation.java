@@ -8,11 +8,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+@Entity(name="FIELD_OPERATION")
 public class FieldOperation {
 
 	@Id
-	@GeneratedValue()
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 
 	@Column(name = "DATE_OPERATION")
@@ -27,7 +27,9 @@ public class FieldOperation {
 	private double doneHa;
 	@Column(name = "TRACTOR")
 	private String tractor;
+	@Column(name = "REGISTRATION_NUMBER")
 	private String registrationNumber;
+	@Column(name = "TRACTOR_DRIVER")
 	private String tractordriver;
 	private double motorHours;
 	private String equipment;
