@@ -75,7 +75,7 @@ public class ExcelReader {
 		XSSFSheet excelSheet = exelBook.getSheetAt(0);
 		XSSFRow currentRow;
 
-		for (int i = ROW_HEADER + 1; i < 20; i++) {
+		for (int i = ROW_HEADER + 1; i < 500; i++) {
 			currentRow = excelSheet.getRow(i);
 			date = DateUtil.getJavaDate(Double.parseDouble(currentRow.getCell(COL_DATE).getRawValue()));
 			fieldCode = currentRow.getCell(COL_FIELD_CODE).getStringCellValue();

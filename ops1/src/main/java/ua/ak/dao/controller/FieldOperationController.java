@@ -33,4 +33,16 @@ public class FieldOperationController {
 
 	}
 
+
+	@RequestMapping(value = "/dataTable")
+	public String dataTable(Model model) {
+		service.fromExceltoDatabse();
+		List<FieldOperation> list = service.getAll();
+		model.addAttribute("fieldOperationList", list);
+		return "data-table";
+
+	}
+
+
+
 }

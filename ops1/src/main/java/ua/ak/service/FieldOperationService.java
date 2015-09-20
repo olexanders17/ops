@@ -24,4 +24,6 @@ public interface FieldOperationService {
 	FieldOperation getById(Long id);
 	void delete(Long id);
 
+	void add(FieldOperation fieldOperation);
+
 }

@@ -52,6 +52,11 @@ public class FieldOperationServiceImpl implements FieldOperationService {
 
 	}
 
+	public void add(FieldOperation fieldOperation) {
+		dao.save(fieldOperation);
+
+	}
+
 	public FieldOperationDao getDao() {
 		return dao;
 	}
@@ -61,12 +66,12 @@ public class FieldOperationServiceImpl implements FieldOperationService {
 	}
 
 	public void fromExceltoDatabse() {
-		
-		ExcelReader er= new ExcelReader();
+
+		ExcelReader er = new ExcelReader();
 		try {
-			List<FieldOperation> list= er.getAllOperations();
+			List<FieldOperation> list = er.getAllOperations();
 		} catch (IOException e) {
-			
+
 			e.printStackTrace();
 		}
 
