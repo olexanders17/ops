@@ -16,10 +16,9 @@ public class DefaultController {
 	@Autowired
 	FieldOperationService service;
 
-	@RequestMapping(value = "/")
-	public String go() {
+	@RequestMapping(value = { "/", "/home" })
+	public String mainPage() {
 
-	
 		return "base.definition";
 	}
 

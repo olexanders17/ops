@@ -14,13 +14,23 @@
 
 
 	<definition name="defaultPage" extends="base.definition">
-	<put-attribute name="body" value="/views/data-table.jsp"></put-attribute>
+		<put-attribute name="body" value="/views/data-table.jsp"></put-attribute>
 	</definition>
 
 
 	<definition name="data-table" extends="base.definition">
-	<put-attribute name="body" value="/views/data-table.jsp"></put-attribute>
+		<put-attribute name="body" value="/views/data-table.jsp"></put-attribute>
 	</definition>
+
+
+	<definition name="fileLoadForm" extends="base.definition">
+		<put-attribute name="body" value="/views/file/file-load-form.jsp"></put-attribute>
+	</definition>
+
+<definition name="file-load-result" extends="base.definition">
+		<put-attribute name="body" value="/views/file/file-load-result.jsp"></put-attribute>
+	</definition>
+
 
 
 

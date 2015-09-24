@@ -20,7 +20,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						</button>
-						<div class="navbar-brand">C NAME</div>
+						<div class="navbar-brand"><a href="/home">AK</a> </div>
 
 					</div>
 					<div class="collapse navbar-collapse" id="menu-block">

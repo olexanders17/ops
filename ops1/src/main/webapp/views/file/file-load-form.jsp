@@ -9,9 +9,9 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
-<br> 
-	<form action="loadFile">
-		<input type="file"><br> <input type="submit">
+	<br>
+	<form action="/fileLoad" method="POST" enctype="multipart/form-data">
+		<input type="file" name="file"><br> <input type="submit">
 	</form>
 </body>
 </html>

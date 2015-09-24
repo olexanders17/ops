@@ -8,8 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ua.ak.dao.FieldOperationDao;
+import ua.ak.dao.InputsDao;
 import ua.ak.domain.FieldOperation;
+import ua.ak.domain.Inputs;
 import ua.ak.service.FieldOperationService;
+import ua.ak.utils.AmountsForFieldOperations;
 import ua.ak.utils.ExcelReader;
 
 @Service()
@@ -17,6 +20,11 @@ public class FieldOperationServiceImpl implements FieldOperationService {
 
 	@Autowired
 	private FieldOperationDao dao;
+	@Autowired
+	private InputsDao daoInputs;
+
+	@Autowired
+	private AmountsForFieldOperations afo;
 
 	public void add(double date, String fieldCode, double fiedArea, String operation, double doneHa, String tractor, String registrationNumber,
 			String tractordriver, double motorHours, String equipment, String serialNumber, double fuelLiters, String crop, String seedsType,
@@ -67,9 +75,16 @@ public class FieldOperationServiceImpl implements FieldOperationService {
 
 	public void fromExceltoDatabse() {
 
-		ExcelReader er = new ExcelReader();
 		try {
+			ExcelReader er = new ExcelReader();
 			List<FieldOperation> list = er.getAllOperations();
+
+			List<Inputs> inputsList = daoInputs.findAll();
+
+			for (FieldOperation fieldOperation : list) {
+				dao.save(afo.getAmounts(fieldOperation, inputsList));
+			}
+
 		} catch (IOException e) {
 
 			e.printStackTrace();
