@@ -8,11 +8,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity(name="FIELD_OPERATION")
+//(name = "FIELD_OPERATION")
+
+@Entity
 public class FieldOperation {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
 	@Column(name = "DATE_OPERATION")
@@ -285,12 +287,15 @@ public class FieldOperation {
 
 	@Override
 	public String toString() {
-		return "FieldOperation [date=" + date + ", fieldCode=" + fieldCode + ", fiedArea=" + fiedArea + ", operation=" + operation + ", doneHa="
-				+ doneHa + ", tractor=" + tractor + ", registrationNumber=" + registrationNumber + ", tractordriver=" + tractordriver
+		return "FieldOperation [id=" + id + ", date=" + date + ", fieldCode=" + fieldCode + ", fiedArea=" + fiedArea + ", operation=" + operation
+				+ ", doneHa=" + doneHa + ", tractor=" + tractor + ", registrationNumber=" + registrationNumber + ", tractordriver=" + tractordriver
 				+ ", motorHours=" + motorHours + ", equipment=" + equipment + ", serialNumber=" + serialNumber + ", fuelLiters=" + fuelLiters
 				+ ", crop=" + crop + ", seedsType=" + seedsType + ", seedsUsageQty=" + seedsUsageQty + ", fertilizerType=" + fertilizerType
 				+ ", fertilizerUsageQty=" + fertilizerUsageQty + ", chemicalsType=" + chemicalsType + ", chemicalsUsageQty=" + chemicalsUsageQty
-				+ ", year=" + year + "]";
+				+ ", year=" + year + ", seedsAmount=" + seedsAmount + ", fertilizerAmount=" + fertilizerAmount + ", chemicalsAmount="
+				+ chemicalsAmount + "]";
 	}
+
+	
 
 }

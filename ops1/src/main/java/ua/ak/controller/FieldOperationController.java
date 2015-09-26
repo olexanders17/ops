@@ -1,4 +1,4 @@
-package ua.ak.dao.controller;
+package ua.ak.controller;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import ua.ak.domain.FieldOperation;
 import ua.ak.service.FieldOperationService;
+import ua.ak.utils.JsonCalendarData;
 
 @Controller
 public class FieldOperationController {
@@ -30,7 +31,17 @@ public class FieldOperationController {
 		this.service = service;
 	}
 
-	@RequestMapping(value = "/fileLoadForm" )
+	@RequestMapping(value = "/calendar")
+	public String calendar(Model model) {
+
+		List<FieldOperation> list = service.getAll();
+		String calendarData = new JsonCalendarData().getJsonCalendarData(list);
+		model.addAttribute("calendarData", calendarData);
+
+		return "calendar";
+	}
+
+	@RequestMapping(value = "/fileLoadForm")
 	public String fieldLoadForm() {
 
 		return "fileLoadForm";
@@ -38,7 +49,7 @@ public class FieldOperationController {
 
 	@RequestMapping(value = "/fileLoad", method = RequestMethod.POST)
 	public String fieldLoad(Model model, @RequestParam("file") MultipartFile file) {
-		
+
 		String name = "ggg";
 		if (!file.isEmpty()) {
 			try {

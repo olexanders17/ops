@@ -14,24 +14,32 @@ import ua.ak.domain.FieldOperation;
 import ua.ak.service.FieldOperationService;
 import ua.ak.service.impl.FieldOperationServiceImpl;
 import ua.ak.utils.ExcelReader;
+import ua.ak.utils.JsonCalendarData;
 
 public class Main {
 
 	public static void main(String[] args) throws IOException {
-		
-		//ClassPathXmlApplicationContext context= new ClassPathXmlApplicationContext("META-INF/appContext.xml");
+
+		// ClassPathXmlApplicationContext context = new
+		// ClassPathXmlApplicationContext("META-INF/appContext.xml");
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("Primary");
 		EntityManager em = factory.createEntityManager();
-		em.getTransaction().begin();		
-		
-		ExcelReader excelReader = new ExcelReader();
-		List<FieldOperation> list = excelReader.getAllOperations();		
-		
+		em.getTransaction().begin();
+
+//		 ExcelReader er = new ExcelReader();
+//		 List<FieldOperation> list0 = er.getAllOperations();
+//		 for (FieldOperation fieldOperation : list0) {
+//		 em.persist(fieldOperation);
+//		 }
+
+		List<FieldOperation> list = em.createQuery("from FieldOperation").getResultList();
+
 		for (FieldOperation fieldOperation : list) {
-		em.persist(fieldOperation);
-		
-	
+			System.out.println(fieldOperation);
 		}
+
+		JsonCalendarData js = new JsonCalendarData();
+		String as = js.getJsonCalendarData(list);
 
 		em.getTransaction().commit();
 		em.close();

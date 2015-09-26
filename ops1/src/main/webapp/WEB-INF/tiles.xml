@@ -21,6 +21,11 @@
 	<definition name="data-table" extends="base.definition">
 		<put-attribute name="body" value="/views/data-table.jsp"></put-attribute>
 	</definition>
+	
+	
+		<definition name="calendar" extends="base.definition">
+		<put-attribute name="body" value="/views/calendar.jsp"></put-attribute>
+	</definition>
 
 
 	<definition name="fileLoadForm" extends="base.definition">

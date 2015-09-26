@@ -1,6 +1,9 @@
-package ua.ak.dao.controller;
+package ua.ak.controller;
 
+import java.nio.file.Path;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,5 +24,24 @@ public class DefaultController {
 
 		return "base.definition";
 	}
+
+	@RequestMapping(value =  "/test")
+	public String test(HttpServletRequest req ) {
+		
+		System.out.println(req.getContextPath());
+		
+		
+		
+
+		
+		
+		
+		
+		return "redirect:/dataTable";
+	}
+
+
+
+
 
 }
