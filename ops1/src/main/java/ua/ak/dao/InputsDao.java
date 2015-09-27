@@ -6,4 +6,6 @@ import ua.ak.domain.Inputs;
 
 public interface  InputsDao extends JpaRepository<Inputs, Long> {
 
+
+	
 }

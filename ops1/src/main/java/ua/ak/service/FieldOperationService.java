@@ -3,6 +3,7 @@ package ua.ak.service;
 import java.util.List;
 
 import ua.ak.domain.FieldOperation;
+import ua.ak.domain.Inputs;
 
 public interface FieldOperationService {
 
@@ -25,5 +26,7 @@ public interface FieldOperationService {
 	void delete(Long id);
 
 	void add(FieldOperation fieldOperation);
+
+	void updateBudgetData();
 
 }

@@ -81,4 +81,17 @@ public class FieldOperationController {
 
 	}
 
+	
+	@RequestMapping(value = "/mait1")
+	public String updateData(Model model) {
+		service.updateBudgetData();
+		
+		return "redirect:/";
+
+	}
+	
+	
+	
+	
+	
 }

@@ -19,8 +19,35 @@
 	<table id="table1" class="order-column row-border hover stripe ">
 		<thead>
 			<tr>
-				<td>Date</td>
-				<td>fieldCode</td>
+				<td>ID</td>
+				<td>DATE_OPERATION</td>
+				<td>FIELD_CODE</td>
+				<td>FIED_AREA</td>
+				<td>OPERATION</td>
+				<td>DONE_HA</td>
+				<td>TRACTOR</td>
+				<td>REGISTRATION_NUMBER</td>
+				<td>TRACTOR_DRIVER</td>
+				<td>MOTOR_HOURS</td>
+				<td>EQUIPMENT</td>
+				<td>SERIAL_NUMBER</td>
+				<td>FUEL_LITERS</td>
+				<td>CROP</td>
+				
+				<td>SEEDS_TYPE</td>
+				<td>SEEDS_USAGE_QTY</td>
+				<td>SEEDS_AMOUNT</td>
+				
+				<td>FERTILIZER_TYPE</td>
+				<td>FERTILIZER_USAGE_QTY</td>
+				<td>FERTILIZER_AMOUNT</td>
+				
+				<td>CHEMICALS_TYPE</td>
+				<td>CHEMICALS_USAGE_QTY</td>
+				<td>CHEMICALS_AMOUNT"</td>
+				
+				<td>YEAR</td>
+				
 
 			</tr>
 
@@ -28,8 +55,35 @@
 		<tbody>
 			<c:forEach var="t" items="${fieldOperationList}">
 				<tr>
-					<td> <fmt:formatDate value="${t.date}" pattern="MM.YYYY"/>              </td>
+				
+					<td>${t.id}</td>
+					<td> <fmt:formatDate value="${t.date}" pattern="DD/MM/YYYY"/> </td>
 					<td>${t.fieldCode}</td>
+					<td> <fmt:formatNumber    value="${t.fiedArea}"   maxFractionDigits="0"  />   </td>
+					<td>${t.operation}</td>
+					<td>${t.doneHa}</td>
+					<td>${t.tractor}</td>
+					<td>${t.registrationNumber}</td>
+					<td>${t.tractordriver}</td>
+					<td>${t.motorHours}</td>
+					<td>${t.equipment}</td>
+					<td>${t.serialNumber}</td>
+					<td><fmt:formatNumber   value="${t.fuelLiters}" maxFractionDigits="0"/> </td>
+					<td>${t.crop}</td>
+					<td>${t.seedsType}</td>
+					<td>${t.seedsUsageQty}</td>
+					<td>${t.seedsAmount}</td>
+					<td>${t.fertilizerType}</td>
+					<td>${t.fertilizerUsageQty}</td>
+					<td>${t.fertilizerAmount}</td>
+					<td>${t.chemicalsType}</td>
+					<td>${t.chemicalsUsageQty}</td>
+					<td>${t.chemicalsAmount}</td>
+					<td>${t.year}</td>
+					
+					
+					
+					
 				</tr>
 			</c:forEach>
 		</tbody>

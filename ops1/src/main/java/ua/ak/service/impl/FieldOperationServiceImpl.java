@@ -20,6 +20,7 @@ public class FieldOperationServiceImpl implements FieldOperationService {
 
 	@Autowired
 	private FieldOperationDao dao;
+
 	@Autowired
 	private InputsDao daoInputs;
 
@@ -73,6 +74,7 @@ public class FieldOperationServiceImpl implements FieldOperationService {
 		this.dao = dao;
 	}
 
+	// Just only load
 	public void fromExceltoDatabse() {
 
 		try {
@@ -88,6 +90,31 @@ public class FieldOperationServiceImpl implements FieldOperationService {
 		} catch (IOException e) {
 
 			e.printStackTrace();
+		}
+
+	}
+
+	@Override
+	public void updateBudgetData() {
+		List<FieldOperation> foList = dao.findAll();
+		List<Inputs> inputsList = daoInputs.findAll();
+
+		for (FieldOperation fo : foList) {
+			for (Inputs inputs : inputsList) {
+
+				if ((fo.getChemicalsType() != null) && (fo.getChemicalsType() != null) && fo.getChemicalsType().equals(inputs.getInputsName())) {
+					fo.setChemicalNameBudget(inputs.getInputsNameBudget());
+					dao.save(fo);
+				}
+				// else if
+				// (fo.getFertilizerType().equals(inputs.getInputsName())) {
+				// fo.setChemicalsType(inputs.getInputsNameBudget());
+				// dao.save(fo);
+				//
+				// }
+
+			}
+
 		}
 
 	}

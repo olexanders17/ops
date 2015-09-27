@@ -10,7 +10,8 @@
 <div class="navmenu navmenu-default  in">
       <a class="navmenu-brand" href="home">Home Page</a>
       <ul class="nav navmenu-nav">
-        <li><a href="dataTable">Data table</a></li>
+        <li><a href="calendar">CALENDAR</a></li>
+        <li><a href="dataTable">DATA TABLE</a></li>
         <li><a href="fileLoadForm">Load file</a></li>
         <li class="active"><a href="./">Reveal</a></li>
         <li><a href="../navbar-offcanvas/">Off canvas navbar</a></li>

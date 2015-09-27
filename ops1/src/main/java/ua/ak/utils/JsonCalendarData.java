@@ -15,9 +15,6 @@ public class JsonCalendarData {
 	public String getJsonCalendarData(List<FieldOperation> fieldOperations) {
 
 		// to realise logic
-		String title;
-		Date start;
-		Date end;
 
 		double doneHa;
 		String operation;
@@ -42,8 +39,10 @@ public class JsonCalendarData {
 
 				// listStr.add(fo.getCrop() + " " + fo.getOperation() + " " +
 				// (int) tmpAmount);
-				calendarDtoList.add(new calendarDto(fo.getDate(), fo.getCrop() + " " + fo.getOperation() + " " + (int) tmpAmount));
-
+				// calendarDtoList.add(new calendarDto(fo.getDate(),
+				// fo.getCrop() + " " + fo.getOperation() + " " + (int)
+				// tmpAmount));
+				calendarDtoList.add(new calendarDto((fo.getCrop() + " " + fo.getOperation() + " ---  " + (int) tmpAmount + " ha"), fo.getDate()));
 				tmpAmount = 0;
 
 			}
@@ -59,35 +58,23 @@ public class JsonCalendarData {
 }
 
 class calendarDto {
+	String title;
+	Date start;
+	String allDay; 
+	// Date end;
 
-	Date actionDate;
-	String DateOperationDescription;
+	public calendarDto() {
+		// TODO Auto-generated constructor stub
+	}
 
-	public calendarDto(Date actionDate, String dateOperationDescription) {
+	
+	
+	public calendarDto(String title, Date start ) {
 		super();
-		this.actionDate = actionDate;
-		DateOperationDescription = dateOperationDescription;
-	}
-
-	public Date getActionDate() {
-		return actionDate;
-	}
-
-	public void setActionDate(Date actionDate) {
-		this.actionDate = actionDate;
-	}
-
-	public String getDateOperationDescription() {
-		return DateOperationDescription;
-	}
-
-	public void setDateOperationDescription(String dateOperationDescription) {
-		DateOperationDescription = dateOperationDescription;
-	}
-
-	@Override
-	public String toString() {
-		return "calendarDto [actionDate=" + actionDate + ", DateOperationDescription=" + DateOperationDescription + "]";
+		this.title = title;
+		this.start = start;
+		this.allDay="true";
+		// this.end = end;
 	}
 
 }

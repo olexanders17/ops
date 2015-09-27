@@ -13,7 +13,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import ua.ak.domain.FieldOperation;
-
+//only read from excel
 public class ExcelReader {
 
 	private Date date;

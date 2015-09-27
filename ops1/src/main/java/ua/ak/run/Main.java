@@ -26,20 +26,20 @@ public class Main {
 		EntityManager em = factory.createEntityManager();
 		em.getTransaction().begin();
 
-//		 ExcelReader er = new ExcelReader();
-//		 List<FieldOperation> list0 = er.getAllOperations();
-//		 for (FieldOperation fieldOperation : list0) {
-//		 em.persist(fieldOperation);
-//		 }
+		 ExcelReader er = new ExcelReader();
+		 List<FieldOperation> list0 = er.getAllOperations();
+		 for (FieldOperation fieldOperation : list0) {
+		 em.persist(fieldOperation);
+		 }
 
-		List<FieldOperation> list = em.createQuery("from FieldOperation").getResultList();
-
-		for (FieldOperation fieldOperation : list) {
-			System.out.println(fieldOperation);
-		}
-
-		JsonCalendarData js = new JsonCalendarData();
-		String as = js.getJsonCalendarData(list);
+//		List<FieldOperation> list = em.createQuery("from FieldOperation").getResultList();
+//
+//		for (FieldOperation fieldOperation : list) {
+//			System.out.println(fieldOperation);
+//		}
+//
+//		JsonCalendarData js = new JsonCalendarData();
+//		String as = js.getJsonCalendarData(list);
 
 		em.getTransaction().commit();
 		em.close();

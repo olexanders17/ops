@@ -6,29 +6,28 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity(name="INPUTS")
+@Entity(name = "INPUTS")
 public class Inputs {
-	
+
 	@Id
-	@Column(name="ID")
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name = "ID")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	
-	@Column(name="INPUTS_NAME")
+
+	@Column(name = "INPUTS_NAME")
 	private String inputsName;
-	
-	@Column(name="INPUTS_NAME_BUDGET")
+
+	@Column(name = "INPUTS_NAME_BUDGET")
 	private String inputsNameBudget;
-	
-	@Column(name="INPUTS_TYPE")
+
+	@Column(name = "INPUTS_TYPE")
 	private String inputsType;
-	
-	
-	@Column(name="INPUTS_PRICE")
+
+	@Column(name = "INPUTS_PRICE")
 	private double inputsPrice;
-	
+
 	public Inputs() {
-	
+
 	}
 
 	public long getId() {
@@ -70,9 +69,5 @@ public class Inputs {
 	public void setInputsNameBudget(String inputsNameBudget) {
 		this.inputsNameBudget = inputsNameBudget;
 	}
-	
 
-	
-	
-	
 }

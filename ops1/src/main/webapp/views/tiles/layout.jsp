@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-
+<link href='//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/fullcalendar.min.css' rel='stylesheet' />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
@@ -48,11 +48,13 @@ body {
 	<div class="container-fluid">
 		<div class="row" id="menu and body">
 
-				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-xs" id="left-menu" style=" padding-left: 1px; ">
-					<tiles:insertAttribute name="menu">	</tiles:insertAttribute>
-				</div>
+			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-xs" id="left-menu" style="padding-left: 1px;">
+				<tiles:insertAttribute name="menu">
+				</tiles:insertAttribute>
+			</div>
 			<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" id="center">
-				<tiles:insertAttribute name="body">		</tiles:insertAttribute>
+				<tiles:insertAttribute name="body">
+				</tiles:insertAttribute>
 			</div>
 
 		</div>
