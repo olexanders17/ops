@@ -24,7 +24,7 @@ public class Inputs {
 	private String inputsType;
 
 	@Column(name = "INPUTS_PRICE")
-	private double inputsPrice;
+	private Double inputsPrice;
 
 	public Inputs() {
 
@@ -54,11 +54,11 @@ public class Inputs {
 		this.inputsType = inputsType;
 	}
 
-	public double getInputsPrice() {
+	public Double getInputsPrice() {
 		return inputsPrice;
 	}
 
-	public void setInputsPrice(double inputsPrice) {
+	public void setInputsPrice(Double inputsPrice) {
 		this.inputsPrice = inputsPrice;
 	}
 

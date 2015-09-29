@@ -95,28 +95,56 @@ public class FieldOperationServiceImpl implements FieldOperationService {
 	}
 
 	@Override
-	public void updateBudgetData() {
+	public void updateBudgetDataNames() {
 		List<FieldOperation> foList = dao.findAll();
 		List<Inputs> inputsList = daoInputs.findAll();
 
+		// attach budget names
 		for (FieldOperation fo : foList) {
 			for (Inputs inputs : inputsList) {
 
-				if ((fo.getChemicalsType() != null) && (fo.getChemicalsType() != null) && fo.getChemicalsType().equals(inputs.getInputsName())) {
+				if ((fo.getChemicalsName() != null) && (inputs.getInputsName() != null) && fo.getChemicalsName().equals(inputs.getInputsName())) {
 					fo.setChemicalNameBudget(inputs.getInputsNameBudget());
 					dao.save(fo);
+				} else if ((fo.getFertilizerName() != null) && (inputs.getInputsName() != null)
+						&& fo.getFertilizerName().equals(inputs.getInputsName())) {
+					fo.setFertilizerlNameBudget(inputs.getInputsNameBudget());
+					dao.save(fo);
+
 				}
-				// else if
-				// (fo.getFertilizerType().equals(inputs.getInputsName())) {
-				// fo.setChemicalsType(inputs.getInputsNameBudget());
-				// dao.save(fo);
-				//
-				// }
+
+				else if ((fo.getSeedsName() != null) && (inputs.getInputsName() != null) && fo.getSeedsName().equals(inputs.getInputsName())) {
+					fo.setSeedsNameBudget(inputs.getInputsNameBudget());
+					dao.save(fo);
+
+				}
 
 			}
 
 		}
+		// recalualte total amounts
+		for (FieldOperation fo : foList) {
+			for (Inputs inputs : inputsList) {
 
+				if ((fo.getSeedsName() != null) && (inputs.getInputsName() != null) && fo.getSeedsName().equals(inputs.getInputsName())) {
+					fo.setSeedsAmount(fo.getSeedsUsageQty() * inputs.getInputsPrice());
+					dao.save(fo);
+				} else
+					if ((fo.getChemicalsName() != null) && (inputs.getInputsName() != null) && fo.getChemicalsName().equals(inputs.getInputsName())) {
+					fo.setChemicalsAmount(fo.getChemicalsUsageQty() * inputs.getInputsPrice());
+					dao.save(fo);
+
+				}
+
+				else if ((fo.getFertilizerName() != null) && (inputs.getInputsName() != null)
+						&& fo.getFertilizerName().equals(inputs.getInputsName())) {
+					fo.setFertilizerAmount(fo.getFertilizerUsageQty() * inputs.getInputsPrice());
+					dao.save(fo);
+
+				}
+
+			}
+
+		}
 	}
-
 }

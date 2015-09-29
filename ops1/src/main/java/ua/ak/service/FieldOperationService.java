@@ -27,6 +27,6 @@ public interface FieldOperationService {
 
 	void add(FieldOperation fieldOperation);
 
-	void updateBudgetData();
+	void updateBudgetDataNames();
 
 }

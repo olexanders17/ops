@@ -14,15 +14,15 @@ public class AmountsForFieldOperations {
 
 		for (Inputs inputsElement : inputs) {
 
-			if (fieldOperation.getChemicalsType().equals(inputsElement.getInputsName())) {
+			if (fieldOperation.getChemicalsName().equals(inputsElement.getInputsName())) {
 				fieldOperation.setChemicalsAmount(fieldOperation.getChemicalsUsageQty() * inputsElement.getInputsPrice());
 			}
 
-			else if (fieldOperation.getSeedsType().equals(inputsElement.getInputsName())) {
+			else if (fieldOperation.getSeedsName().equals(inputsElement.getInputsName())) {
 				fieldOperation.setSeedsAmount(fieldOperation.getSeedsUsageQty() * inputsElement.getInputsPrice());
 			}
 
-			else if (fieldOperation.getFertilizerType().equals(inputsElement.getInputsName())) {
+			else if (fieldOperation.getFertilizerName().equals(inputsElement.getInputsName())) {
 				fieldOperation.setFertilizerAmount(fieldOperation.getFertilizerUsageQty() * inputsElement.getInputsPrice());
 			}
 

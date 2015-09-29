@@ -8,8 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
-
 @Entity(name = "FIELD_OPERATION")
 public class FieldOperation {
 
@@ -19,99 +17,91 @@ public class FieldOperation {
 
 	@Column(name = "DATE_OPERATION")
 	private Date date;
-	
+
 	@Column(name = "FIELD_CODE")
 	private String fieldCode;
-	
+
 	@Column(name = "FIED_AREA")
 	private double fiedArea;
-	
+
 	@Column(name = "OPERATION")
 	private String operation;
-	
+
 	@Column(name = "DONE_HA")
 	private double doneHa;
-	
+
 	@Column(name = "TRACTOR")
 	private String tractor;
-	
+
 	@Column(name = "REGISTRATION_NUMBER")
 	private String registrationNumber;
-	
+
 	@Column(name = "TRACTOR_DRIVER")
 	private String tractordriver;
-	
+
 	@Column(name = "MOTOR_HOURS")
 	private double motorHours;
-	
+
 	@Column(name = "EQUIPMENT")
 	private String equipment;
-	
+
 	@Column(name = "SERIAL_NUMBER")
 	private String serialNumber;
-	
+
 	@Column(name = "FUEL_LITERS")
 	private double fuelLiters;
-	
+
 	@Column(name = "CROP")
 	private String crop;
-	
-	@Column(name = "SEEDS_TYPE")
-	private String seedsType;
-	
+
+	@Column(name = "SEEDS_NAME")
+	private String seedsName;
+
 	@Column(name = "SEEDS_USAGE_QTY")
 	private double seedsUsageQty;
-	
-	@Column(name = "FERTILIZER_TYPE")
-	private String fertilizerType;
-	
+
+	@Column(name = "FERTILIZER_NAME")
+	private String fertilizerName;
+
 	@Column(name = "FERTILIZER_USAGE_QTY")
 	private double fertilizerUsageQty;
-	
-	@Column(name = "CHEMICALS_TYPE")
-	private String chemicalsType;
-	
+
+	@Column(name = "CHEMICALS_NAME")
+	private String chemicalsName;
+
 	@Column(name = "CHEMICALS_USAGE_QTY")
 	private double chemicalsUsageQty;
-	
+
 	@Column(name = "YEAR")
 	private double year;
-	
+
 	@Column(name = "SEEDS_AMOUNT")
 	private double seedsAmount;
-	
+
 	@Column(name = "FERTILIZER_AMOUNT")
 	private double fertilizerAmount;
-	
+
 	@Column(name = "CHEMICALS_AMOUNT")
 	private double chemicalsAmount;
 
-	
-	@Column(name="SEEDS_NAME_BUDGET")
+	@Column(name = "SEEDS_NAME_BUDGET")
 	private String seedsNameBudget;
-	
-	@Column(name="SEEDS_TYPE_BUDGET")
+
+	@Column(name = "SEEDS_TYPE_BUDGET")
 	private String seedsTypeBudget;
-	
-	
-	@Column(name="CHEMICALS_NAME_BUDGET")
+
+	@Column(name = "CHEMICALS_NAME_BUDGET")
 	private String chemicalNameBudget;
-	
-	@Column(name="CHEMICALS_TYPE_BUDGET")
+
+	@Column(name = "CHEMICALS_TYPE_BUDGET")
 	private String chemicalTypeBudget;
-	
-	
-	@Column(name="FERTILIZER_NAME_BUDGET")
+
+	@Column(name = "FERTILIZER_NAME_BUDGET")
 	private String fertilizerlNameBudget;
-	
-	@Column(name="FERTILIZER_TYPE_BUDGET")
+
+	@Column(name = "FERTILIZER_TYPE_BUDGET")
 	private String fertilizerlTypeBudget;
 
-	
-	
-	
-	
-	
 	public long getId() {
 		return id;
 	}
@@ -165,11 +155,11 @@ public class FieldOperation {
 		this.serialNumber = serialNumber;
 		this.fuelLiters = fuelLiters;
 		this.crop = crop;
-		this.seedsType = seedsType;
+		this.seedsName = seedsType;
 		this.seedsUsageQty = seedsUsageQty;
-		this.fertilizerType = fertilizerType;
+		this.fertilizerName = fertilizerType;
 		this.fertilizerUsageQty = fertilizerUsageQty;
-		this.chemicalsType = chemicalsType;
+		this.chemicalsName = chemicalsType;
 		this.chemicalsUsageQty = chemicalsUsageQty;
 		this.year = year;
 	}
@@ -291,12 +281,12 @@ public class FieldOperation {
 		this.crop = crop;
 	}
 
-	public String getSeedsType() {
-		return seedsType;
+	public String getSeedsName() {
+		return seedsName;
 	}
 
-	public void setSeedsType(String seedsType) {
-		this.seedsType = seedsType;
+	public void setSeedsName(String seedsType) {
+		this.seedsName = seedsType;
 	}
 
 	public double getSeedsUsageQty() {
@@ -307,12 +297,12 @@ public class FieldOperation {
 		this.seedsUsageQty = seedsUsageQty;
 	}
 
-	public String getFertilizerType() {
-		return fertilizerType;
+	public String getFertilizerName() {
+		return fertilizerName;
 	}
 
-	public void setFertilizerType(String fertilizerType) {
-		this.fertilizerType = fertilizerType;
+	public void setFertilizerName(String fertilizerType) {
+		this.fertilizerName = fertilizerType;
 	}
 
 	public double getFertilizerUsageQty() {
@@ -323,12 +313,12 @@ public class FieldOperation {
 		this.fertilizerUsageQty = fertilizerUsageQty;
 	}
 
-	public String getChemicalsType() {
-		return chemicalsType;
+	public String getChemicalsName() {
+		return chemicalsName;
 	}
 
-	public void setChemicalsType(String chemicalsType) {
-		this.chemicalsType = chemicalsType;
+	public void setChemicalsName(String chemicalsType) {
+		this.chemicalsName = chemicalsType;
 	}
 
 	public double getChemicalsUsageQty() {
@@ -347,7 +337,6 @@ public class FieldOperation {
 		this.year = year;
 	}
 
-	
 	public String getSeedsNameBudget() {
 		return seedsNameBudget;
 	}
@@ -401,17 +390,12 @@ public class FieldOperation {
 		return "FieldOperation [id=" + id + ", date=" + date + ", fieldCode=" + fieldCode + ", fiedArea=" + fiedArea + ", operation=" + operation
 				+ ", doneHa=" + doneHa + ", tractor=" + tractor + ", registrationNumber=" + registrationNumber + ", tractordriver=" + tractordriver
 				+ ", motorHours=" + motorHours + ", equipment=" + equipment + ", serialNumber=" + serialNumber + ", fuelLiters=" + fuelLiters
-				+ ", crop=" + crop + ", seedsType=" + seedsType + ", seedsUsageQty=" + seedsUsageQty + ", fertilizerType=" + fertilizerType
-				+ ", fertilizerUsageQty=" + fertilizerUsageQty + ", chemicalsType=" + chemicalsType + ", chemicalsUsageQty=" + chemicalsUsageQty
+				+ ", crop=" + crop + ", seedsType=" + seedsName + ", seedsUsageQty=" + seedsUsageQty + ", fertilizerType=" + fertilizerName
+				+ ", fertilizerUsageQty=" + fertilizerUsageQty + ", chemicalsType=" + chemicalsName + ", chemicalsUsageQty=" + chemicalsUsageQty
 				+ ", year=" + year + ", seedsAmount=" + seedsAmount + ", fertilizerAmount=" + fertilizerAmount + ", chemicalsAmount="
 				+ chemicalsAmount + ", seedsNameBudget=" + seedsNameBudget + ", seedsTypeBudget=" + seedsTypeBudget + ", chemicalNameBudget="
 				+ chemicalNameBudget + ", chemicalTypeBudget=" + chemicalTypeBudget + ", fertilizerlNameBudget=" + fertilizerlNameBudget
 				+ ", fertilizerlTypeBudget=" + fertilizerlTypeBudget + "]";
 	}
-
-	
-	
-
-	
 
 }
