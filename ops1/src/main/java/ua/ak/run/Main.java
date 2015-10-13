@@ -26,7 +26,7 @@ public class Main {
 		EntityManager em = factory.createEntityManager();
 		em.getTransaction().begin();
 
-		 ExcelReader er = new ExcelReader();
+		 ExcelReader er = new ExcelReader("Ops.xlsx");
 		 List<FieldOperation> list0 = er.getAllOperations();
 		 for (FieldOperation fieldOperation : list0) {
 		 em.persist(fieldOperation);

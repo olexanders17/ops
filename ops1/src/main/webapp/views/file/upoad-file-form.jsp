@@ -10,8 +10,11 @@
 </head>
 <body>
 	<br>
-	<form action="/fileLoad" method="POST" enctype="multipart/form-data">
-		<input type="file" name="file"><br> <input type="submit">
+	<form action="uplodFileResult" method="POST" enctype="multipart/form-data">
+		<input type="file" name="file" class="btn btn-default">
+		<input type="text" name="name" style="display: none">
+		<br><br>
+		 <input type="submit" class="btn btn-success">
 	</form>
 </body>
 </html>

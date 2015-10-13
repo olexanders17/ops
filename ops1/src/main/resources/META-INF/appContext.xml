@@ -21,7 +21,7 @@
 
 	<jpa:repositories base-package="ua.ak.dao"></jpa:repositories>
 	<tx:annotation-driven transaction-manager="transactionManager" />
-	<context:component-scan base-package="ua.*"></context:component-scan>
+	<context:component-scan base-package="ua.ak"></context:component-scan>
 	<mvc:annotation-driven></mvc:annotation-driven>
 	<mvc:resources location="/resourses/" mapping="/resourses**"></mvc:resources>
 

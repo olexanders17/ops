@@ -10,7 +10,7 @@ public class Main2 {
 
 	public static void main(String[] args) throws IOException {
 		
-		ExcelReader excelReader = new ExcelReader();
+		ExcelReader excelReader = new ExcelReader("Ops.xlsx");
 		
 		List<FieldOperation> list = excelReader.getAllOperations();
 

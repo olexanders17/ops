@@ -21,19 +21,23 @@
 	<definition name="data-table" extends="base.definition">
 		<put-attribute name="body" value="/views/data-table.jsp"></put-attribute>
 	</definition>
-	
-	
-		<definition name="calendar" extends="base.definition">
+
+
+	<definition name="calendar" extends="base.definition">
 		<put-attribute name="body" value="/views/calendar.jsp"></put-attribute>
 	</definition>
 
 
-	<definition name="fileLoadForm" extends="base.definition">
-		<put-attribute name="body" value="/views/file/file-load-form.jsp"></put-attribute>
+	<definition name="upload-file-result" extends="base.definition">
+		<put-attribute name="body" value="/views/file/upload-file-result.jsp"></put-attribute>
 	</definition>
 
-<definition name="file-load-result" extends="base.definition">
-		<put-attribute name="body" value="/views/file/file-load-result.jsp"></put-attribute>
+	<definition name="uplod-file-form" extends="base.definition">
+		<put-attribute name="body" value="/views/file/upoad-file-form.jsp"></put-attribute>
+	</definition>
+
+	<definition name="fields-info" extends="base.definition">
+		<put-attribute name="body" value="/views/field/field-info.jsp"></put-attribute>
 	</definition>
 
 

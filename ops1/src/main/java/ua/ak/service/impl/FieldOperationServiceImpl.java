@@ -1,6 +1,7 @@
 package ua.ak.service.impl;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -12,6 +13,7 @@ import ua.ak.dao.InputsDao;
 import ua.ak.domain.FieldOperation;
 import ua.ak.domain.Inputs;
 import ua.ak.service.FieldOperationService;
+import ua.ak.utils.AllFieldsTableUtil;
 import ua.ak.utils.AmountsForFieldOperations;
 import ua.ak.utils.ExcelReader;
 
@@ -75,22 +77,27 @@ public class FieldOperationServiceImpl implements FieldOperationService {
 	}
 
 	// Just only load
-	public void fromExceltoDatabse() {
+	@Override
+	public void fromExceltoDatabse(String filename) {
 
-		try {
-			ExcelReader er = new ExcelReader();
-			List<FieldOperation> list = er.getAllOperations();
+		ExcelReader er = new ExcelReader(filename);
+		List<FieldOperation> list = er.getAllOperations();
+		List<Inputs> inputsList = daoInputs.findAll();
+		
+		//List<FieldOperation> foAfterAmounts= afo.getAmounts(list, inputsList);
+		
 
-			List<Inputs> inputsList = daoInputs.findAll();
+		
+		//update amounts
+		for (FieldOperation fieldOperation : list) {
+			afo.getAmounts(fieldOperation, inputsList);
 
-			for (FieldOperation fieldOperation : list) {
-				dao.save(afo.getAmounts(fieldOperation, inputsList));
-			}
-
-		} catch (IOException e) {
-
-			e.printStackTrace();
 		}
+		
+		
+		dao.save(list);
+		
+		
 
 	}
 
@@ -147,4 +154,27 @@ public class FieldOperationServiceImpl implements FieldOperationService {
 
 		}
 	}
+
+	@Override
+	public List<AllFieldsTableUtil> ActBudgetAllfields() {
+
+		List<FieldOperation> listFieldOperationsOr = dao.findAll();
+		List<FieldOperation> listFieldOperations = new ArrayList<FieldOperation>();
+
+		for (FieldOperation fo : listFieldOperationsOr) {
+			if (fo.getYear() == Double.parseDouble("2015")) {
+				listFieldOperations.add(fo);
+			}
+
+		}
+
+		for (FieldOperation fo2 : listFieldOperations) {
+			System.out.println(fo2);
+
+		}
+
+		return null;
+
+	}
+
 }

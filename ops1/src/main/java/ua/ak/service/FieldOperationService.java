@@ -1,9 +1,12 @@
 package ua.ak.service;
 
+import java.io.IOException;
 import java.util.List;
 
 import ua.ak.domain.FieldOperation;
 import ua.ak.domain.Inputs;
+import ua.ak.utils.AllFieldsTableUtil;
+import ua.ak.utils.ExcelReader;
 
 public interface FieldOperationService {
 
@@ -19,7 +22,7 @@ public interface FieldOperationService {
 			String fertilizerType, double fertilizerUsageQty, String chemicalsType, double chemicalsUsageQty,
 			double year, double seedsAmount, double fertilizerAmount, double chemicalsAmount);
 
-	public void fromExceltoDatabse(); 
+	 
 	
 	List<FieldOperation> getAll();	
 	FieldOperation getById(Long id);
@@ -28,5 +31,9 @@ public interface FieldOperationService {
 	void add(FieldOperation fieldOperation);
 
 	void updateBudgetDataNames();
+
+	List<AllFieldsTableUtil> ActBudgetAllfields();
+
+	void fromExceltoDatabse(String filename);
 
 }

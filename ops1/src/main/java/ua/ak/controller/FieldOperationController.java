@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import ua.ak.domain.FieldOperation;
 import ua.ak.service.FieldOperationService;
+import ua.ak.utils.AllFieldsTableUtil;
 import ua.ak.utils.JsonCalendarData;
 
 @Controller
@@ -67,14 +68,14 @@ public class FieldOperationController {
 			// empty.";
 		}
 
-		service.fromExceltoDatabse();
+		//service.fromExceltoDatabse();
 		return "redirect:/";
 
 	}
 
 	@RequestMapping(value = "/dataTable")
 	public String dataTable(Model model) {
-		service.fromExceltoDatabse();
+		//service.fromExceltoDatabse();
 		List<FieldOperation> list = service.getAll();
 		model.addAttribute("fieldOperationList", list);
 		return "data-table";
@@ -89,6 +90,17 @@ public class FieldOperationController {
 		return "redirect:/";
 
 	}
+	
+
+	@RequestMapping(value = "/fieldsInfo")
+	public String fieldsInfo(Model model) {
+		List<AllFieldsTableUtil> avb = service.ActBudgetAllfields();		
+		
+		return "fields-info";
+
+	}
+
+	
 	
 	
 	

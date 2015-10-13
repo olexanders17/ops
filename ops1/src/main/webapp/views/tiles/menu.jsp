@@ -12,7 +12,8 @@
       <ul class="nav navmenu-nav">
         <li><a href="calendar">CALENDAR</a></li>
         <li><a href="dataTable">DATA TABLE</a></li>
-        <li><a href="fileLoadForm">Load file</a></li>
+        <li><a href="uplodFileForm">UPLOAD FILE</a></li>
+        <li><a href="fieldsInfo">Fileds Info</a></li>
         <li class="active"><a href="./">Reveal</a></li>
         <li><a href="../navbar-offcanvas/">Off canvas navbar</a></li>
       </ul>
