@@ -40,6 +40,9 @@
 		<put-attribute name="body" value="/views/field/field-info.jsp"></put-attribute>
 	</definition>
 
+<definition name="admin-panel" extends="base.definition">
+		<put-attribute name="body" value="/views/admin/admin-panel.jsp"></put-attribute>
+	</definition>
 
 
 

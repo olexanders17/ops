@@ -11,7 +11,7 @@ import ua.ak.dao.FieldOperationDao;
 public class WebSeviceController {
 
 	public WebSeviceController() {
-		// TODO Auto-generated constructor stub
+	
 	}
 
 	@Autowired
@@ -26,7 +26,7 @@ public class WebSeviceController {
 	}
 
 	@RequestMapping(value = "/folist")
-	FieldOperationWSDto getAllfieldsOperstions() {
+	public FieldOperationWSDto getAllfieldsOperstions() {
 
 		FieldOperationWSDto fo = new FieldOperationWSDto();
 		fo.list = dao.findAll();

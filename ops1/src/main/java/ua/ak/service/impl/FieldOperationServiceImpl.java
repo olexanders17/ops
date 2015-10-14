@@ -47,7 +47,7 @@ public class FieldOperationServiceImpl implements FieldOperationService {
 			String registrationNumber, String tractordriver, double motorHours, String equipment, String serialNumber, double fuelLiters, String crop,
 			String seedsType, double seedsUsageQty, String fertilizerType, double fertilizerUsageQty, String chemicalsType, double chemicalsUsageQty,
 			double year, double seedsAmount, double fertilizerAmount, double chemicalsAmount) {
-		// TODO Auto-generated method stub
+		 
 
 	}
 
@@ -177,4 +177,17 @@ public class FieldOperationServiceImpl implements FieldOperationService {
 
 	}
 
+	@Override
+	public void deleteAll(){
+		dao.deleteAll();
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 }

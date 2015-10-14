@@ -10,7 +10,6 @@ import java.nio.file.attribute.BasicFileAttributes;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -80,14 +79,26 @@ public class DefaultController {
 		File file = new File(filename);
 		if (!file.exists()) {
 			System.out.println("File not found");
-			return "redirect:/";
+			return "redirect:/adminPanel";
 		}
 		
 		
-		
+		service.deleteAll();
 		service.fromExceltoDatabse(filename);
 
 		return "redirect:/";
 	}
 
+	
+	@RequestMapping(value="/adminPanel")
+	public String  adminPanel(){
+		return "admin-panel";
+		
+	}
+	
+	
+	
+	
+	
+	
 }

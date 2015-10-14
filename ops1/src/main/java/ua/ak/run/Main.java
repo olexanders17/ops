@@ -25,12 +25,14 @@ public class Main {
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("Primary");
 		EntityManager em = factory.createEntityManager();
 		em.getTransaction().begin();
+		
+		
 
-		 ExcelReader er = new ExcelReader("Ops.xlsx");
-		 List<FieldOperation> list0 = er.getAllOperations();
-		 for (FieldOperation fieldOperation : list0) {
-		 em.persist(fieldOperation);
-		 }
+//		 ExcelReader er = new ExcelReader("Ops.xlsx");
+//		 List<FieldOperation> list0 = er.getAllOperations();
+//		 for (FieldOperation fieldOperation : list0) {
+//		 em.persist(fieldOperation);
+//		 }
 
 //		List<FieldOperation> list = em.createQuery("from FieldOperation").getResultList();
 //

@@ -36,4 +36,6 @@ public interface FieldOperationService {
 
 	void fromExceltoDatabse(String filename);
 
+	void deleteAll();
+
 }
