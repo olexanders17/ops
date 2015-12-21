@@ -14,20 +14,26 @@ public class AmountsForFieldOperations {
 
 		for (Inputs inputsElement : inputs) {
 
-			if (fieldOperation.getChemicalsName().equals(inputsElement.getInputsName())) {
-				fieldOperation.setChemicalsAmount(fieldOperation.getChemicalsUsageQty() * inputsElement.getInputsPrice());
-			}
-
-			else if (fieldOperation.getSeedsName().equals(inputsElement.getInputsName())) {
-				fieldOperation.setSeedsAmount(fieldOperation.getSeedsUsageQty() * inputsElement.getInputsPrice());
-			}
-
-			else if (fieldOperation.getFertilizerName().equals(inputsElement.getInputsName())) {
-				fieldOperation.setFertilizerAmount(fieldOperation.getFertilizerUsageQty() * inputsElement.getInputsPrice());
+			if (fieldOperation.getInputName().equals(inputsElement.getInputsName())) {
+				fieldOperation.setInputAmount(fieldOperation.getInputUsageQty() * inputsElement.getInputsPrice());
 			}
 
 		}
+
+		setInputsTypes(fieldOperation, inputs);
+
 		return fieldOperation;
+
+	}
+
+	public void setInputsTypes(FieldOperation fieldOperation, List<Inputs> inputs) {
+		for (Inputs inputsElement : inputs) {
+
+			if (fieldOperation.getInputName().equals(inputsElement.getInputsName())) {
+				fieldOperation.setInputTypeBudget(inputsElement.getInputsType());
+			}
+
+		}
 
 	}
 

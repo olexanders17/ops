@@ -14,10 +14,10 @@
 </head>
 <body>
 	Data table
+<div style="overflow: scroll;" >
 
-
-	<table id="table1" class="order-column row-border hover stripe ">
-		<thead>
+	<table id="table1" class=" table  order-column row-border   " style="font-size: 11px;">
+		<thead style="font-weight: bold;">
 			<tr>
 				<td>ID</td>
 				<td>DATE_OPERATION</td>
@@ -38,13 +38,13 @@
 				<td>SEEDS_USAGE_QTY</td>
 				<td>SEEDS_AMOUNT</td>
 				
-				<td>FERTILIZER_NAME</td>
-				<td>FERTILIZER_USAGE_QTY</td>
-				<td>FERTILIZER_AMOUNT</td>
+<!-- 				<td>FERTILIZER_NAME</td> -->
+<!-- 				<td>FERTILIZER_USAGE_QTY</td> -->
+<!-- 				<td>FERTILIZER_AMOUNT</td> -->
 				
-				<td>CHEMICALS_NAME</td>
-				<td>CHEMICALS_USAGE_QTY</td>
-				<td>CHEMICALS_AMOUNT"</td>
+<!-- 				<td>CHEMICALS_NAME</td> -->
+<!-- 				<td>CHEMICALS_USAGE_QTY</td> -->
+<!-- 				<td>CHEMICALS_AMOUNT"</td> -->
 				
 				<td>YEAR</td>
 				
@@ -57,28 +57,28 @@
 				<tr>
 				
 					<td>${t.id}</td>
-					<td> <fmt:formatDate value="${t.date}" pattern="DD/MM/YYYY"/> </td>
+					<td> <fmt:formatDate value="${t.date}" pattern="dd/MM/YYYY" type="DATE"/> </td>
 					<td>${t.fieldCode}</td>
 					<td> <fmt:formatNumber    value="${t.fiedArea}"   maxFractionDigits="0"  />   </td>
 					<td>${t.operation}</td>
 					<td>${t.doneHa}</td>
 					<td>${t.tractor}</td>
-					<td>${t.registrationNumber}</td>
+					<td style="max-width: 5px">${t.registrationNumber}</td>
 					<td>${t.tractordriver}</td>
 					<td>${t.motorHours}</td>
 					<td>${t.equipment}</td>
 					<td>${t.serialNumber}</td>
 					<td><fmt:formatNumber   value="${t.fuelLiters}" maxFractionDigits="0"/> </td>
 					<td>${t.crop}</td>
-					<td>${t.seedsName}</td>
-					<td>${t.seedsUsageQty}</td>
-					<td>${t.seedsAmount}</td>
-					<td>${t.fertilizerName}</td>
-					<td>${t.fertilizerUsageQty}</td>
-					<td>${t.fertilizerAmount}</td>
-					<td>${t.chemicalsName}</td>
-					<td>${t.chemicalsUsageQty}</td>
-					<td>${t.chemicalsAmount}</td>
+					<td>${t.inputName}</td>
+					<td>${t.inputUsageQty}</td>
+					<td>${t.inputAmount}</td>
+<%-- 					<td>${t.fertilizerName}</td> --%>
+<%-- 					<td>${t.fertilizerUsageQty}</td> --%>
+<%-- 					<td>${t.fertilizerAmount}</td> --%>
+<%-- 					<td>${t.chemicalsName}</td> --%>
+<%-- 					<td>${t.chemicalsUsageQty}</td> --%>
+<%-- 					<td>${t.chemicalsAmount}</td> --%>
 					<td>${t.year}</td>
 					
 					
@@ -90,7 +90,7 @@
 
 
 	</table>
-	
+</div>	
 	
 	
 	<script type="text/javascript">

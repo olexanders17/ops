@@ -1,6 +1,5 @@
 package ua.ak.service.impl;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -15,7 +14,7 @@ import ua.ak.domain.Inputs;
 import ua.ak.service.FieldOperationService;
 import ua.ak.utils.AllFieldsTableUtil;
 import ua.ak.utils.AmountsForFieldOperations;
-import ua.ak.utils.ExcelReader;
+import ua.ak.utils.ExcelReaderSingleColumn;
 
 @Service()
 public class FieldOperationServiceImpl implements FieldOperationService {
@@ -47,7 +46,6 @@ public class FieldOperationServiceImpl implements FieldOperationService {
 			String registrationNumber, String tractordriver, double motorHours, String equipment, String serialNumber, double fuelLiters, String crop,
 			String seedsType, double seedsUsageQty, String fertilizerType, double fertilizerUsageQty, String chemicalsType, double chemicalsUsageQty,
 			double year, double seedsAmount, double fertilizerAmount, double chemicalsAmount) {
-		 
 
 	}
 
@@ -80,24 +78,20 @@ public class FieldOperationServiceImpl implements FieldOperationService {
 	@Override
 	public void fromExceltoDatabse(String filename) {
 
-		ExcelReader er = new ExcelReader(filename);
+		ExcelReaderSingleColumn er = new ExcelReaderSingleColumn(filename);
 		List<FieldOperation> list = er.getAllOperations();
 		List<Inputs> inputsList = daoInputs.findAll();
-		
-		//List<FieldOperation> foAfterAmounts= afo.getAmounts(list, inputsList);
-		
 
-		
-		//update amounts
+		// List<FieldOperation> foAfterAmounts= afo.getAmounts(list,
+		// inputsList);
+
+		// update amounts
 		for (FieldOperation fieldOperation : list) {
 			afo.getAmounts(fieldOperation, inputsList);
 
 		}
-		
-		
+
 		dao.save(list);
-		
-		
 
 	}
 
@@ -110,20 +104,9 @@ public class FieldOperationServiceImpl implements FieldOperationService {
 		for (FieldOperation fo : foList) {
 			for (Inputs inputs : inputsList) {
 
-				if ((fo.getChemicalsName() != null) && (inputs.getInputsName() != null) && fo.getChemicalsName().equals(inputs.getInputsName())) {
-					fo.setChemicalNameBudget(inputs.getInputsNameBudget());
+				if ((fo.getInputName() != null) && (inputs.getInputsName() != null) && fo.getInputName().equals(inputs.getInputsName())) {
+					fo.setInputName(inputs.getInputsNameBudget());
 					dao.save(fo);
-				} else if ((fo.getFertilizerName() != null) && (inputs.getInputsName() != null)
-						&& fo.getFertilizerName().equals(inputs.getInputsName())) {
-					fo.setFertilizerlNameBudget(inputs.getInputsNameBudget());
-					dao.save(fo);
-
-				}
-
-				else if ((fo.getSeedsName() != null) && (inputs.getInputsName() != null) && fo.getSeedsName().equals(inputs.getInputsName())) {
-					fo.setSeedsNameBudget(inputs.getInputsNameBudget());
-					dao.save(fo);
-
 				}
 
 			}
@@ -133,21 +116,9 @@ public class FieldOperationServiceImpl implements FieldOperationService {
 		for (FieldOperation fo : foList) {
 			for (Inputs inputs : inputsList) {
 
-				if ((fo.getSeedsName() != null) && (inputs.getInputsName() != null) && fo.getSeedsName().equals(inputs.getInputsName())) {
-					fo.setSeedsAmount(fo.getSeedsUsageQty() * inputs.getInputsPrice());
+				if ((fo.getInputName() != null) && (inputs.getInputsName() != null) && fo.getInputName().equals(inputs.getInputsName())) {
+					fo.setInputAmount(fo.getInputUsageQty() * inputs.getInputsPrice());
 					dao.save(fo);
-				} else
-					if ((fo.getChemicalsName() != null) && (inputs.getInputsName() != null) && fo.getChemicalsName().equals(inputs.getInputsName())) {
-					fo.setChemicalsAmount(fo.getChemicalsUsageQty() * inputs.getInputsPrice());
-					dao.save(fo);
-
-				}
-
-				else if ((fo.getFertilizerName() != null) && (inputs.getInputsName() != null)
-						&& fo.getFertilizerName().equals(inputs.getInputsName())) {
-					fo.setFertilizerAmount(fo.getFertilizerUsageQty() * inputs.getInputsPrice());
-					dao.save(fo);
-
 				}
 
 			}
@@ -178,16 +149,18 @@ public class FieldOperationServiceImpl implements FieldOperationService {
 	}
 
 	@Override
-	public void deleteAll(){
+	public void deleteAll() {
 		dao.deleteAll();
-		
+
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+
+	@Override
+	public void test() {
+		System.out.println("METHOD TEST");
+		// FieldOperationDaoImpl2 dao2 = new FieldOperationDaoImpl2();
+		//
+		// System.out.println(dao2.findData());
+
+	}
+
 }

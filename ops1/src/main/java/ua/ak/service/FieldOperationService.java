@@ -38,4 +38,6 @@ public interface FieldOperationService {
 
 	void deleteAll();
 
+	void test();
+
 }

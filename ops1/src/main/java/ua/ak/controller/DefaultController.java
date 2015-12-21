@@ -86,7 +86,7 @@ public class DefaultController {
 		service.deleteAll();
 		service.fromExceltoDatabse(filename);
 
-		return "redirect:/";
+		return "redirect:/adminPanel";
 	}
 
 	
@@ -95,6 +95,26 @@ public class DefaultController {
 		return "admin-panel";
 		
 	}
+	
+	
+	
+	@RequestMapping(value="/test")
+	public String  test(){
+		service.test();
+		
+		return "redirect:/";
+		
+	}
+	
+	
+	@RequestMapping(value="/fieldInfo")
+	public String  fieldInfo(){
+		service.test();
+		
+		return "redirect:/";
+		
+	}
+	
 	
 	
 	
